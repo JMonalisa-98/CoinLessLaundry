@@ -1,0 +1,59 @@
+.update{
+	
+	border: none;
+	color: rgb(202, 41, 41);
+	background-color: burlywood;
+	border-radius: 30px;
+	font-size: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 700px;
+	margin-top: 100px;
+}
+.update:hover{
+	opacity: 2;
+	
+}
+div .ht{
+    margin-top: 50px;
+    text-align:center;
+    color: darkcyan;
+}
+
+  /* Add styles to the form container */
+  .form-container {
+	width: 400px;
+	padding: 10px;
+	margin-top:50px;
+    background-color: rgb(187, 240, 211);
+    left:500px;
+    margin-bottom: 50px;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text]{
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+  }
+  

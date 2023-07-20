@@ -1,0 +1,119 @@
+body {
+    background: #f4f7fc !important;
+}
+
+.PageContainerBig {
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.PageContainerSmall {
+    margin-top: 80px;
+    margin-left: 18vw;
+    width: 82vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.boxMainDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px !important;
+    width: auto;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.b1 {
+    background: rgb(79, 14, 154);
+    background: linear-gradient(63deg, rgba(79, 14, 154, 1) 0%, rgba(0, 142, 255, 1) 100%);
+}
+
+.b2 {
+    background: rgb(255, 102, 0);
+    background: linear-gradient(63deg, rgba(255, 102, 0, 1) 0%, rgba(255, 235, 0, 1) 100%);
+}
+
+.b3 {
+    background: rgb(0, 136, 66);
+    background: linear-gradient(63deg, rgba(0, 136, 66, 1) 0%, rgba(160, 255, 2, 1) 100%);
+}
+
+.b4 {
+    background: rgb(255, 0, 125);
+    background: linear-gradient(63deg, rgba(255, 0, 125, 1) 0%, rgba(255, 86, 2, 1) 100%);
+}
+
+.b5 {
+    background: rgb(255, 244, 0);
+    background: linear-gradient(63deg, rgba(255, 244, 0, 1) 0%, rgba(255, 2, 45, 1) 100%);
+}
+
+.totalOrdersLabel {
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.todayStat {
+    margin-top: 40px;
+}
+
+.todayStatistics {
+    margin-left: 40px;
+    margin-right: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgb(245, 245, 245) 0px 0px 10px 5px;
+    height: 330px;
+}
+
+#textInfo {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0;
+    color: #575757;
+    margin-left: 20px;
+}
+
+#divider1 {
+    margin: 0;
+    background: #b6b6b6;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.statisticsNew {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgb(245, 245, 245) 0px 0px 10px 5px;
+    height: 330px;
+}
+
+#bestSaleImg {
+    height: 150px;
+}
+
+.rowDisName {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(0, 132, 255);
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#bestSaleName {
+    margin: 5px;
+}

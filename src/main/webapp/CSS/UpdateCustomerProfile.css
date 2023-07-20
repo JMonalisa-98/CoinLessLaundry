@@ -1,0 +1,111 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display|Roboto&display=swap');
+body,
+header,
+body {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Contact Page Body CSS*/
+.img {
+		width:600px;
+		height:608px;
+		margin-top: 293px;
+		margin-left:23px;	
+}
+
+table {
+  
+  width: 146%;
+  
+}
+
+
+td {
+	
+	height: 36px;
+
+}
+
+div.tab{
+	background-color: azure;
+	border-radius: 20px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+	padding: 12px 109px;
+	margin: 25px 20px 20px 20px;
+	margin-left: 53%;
+	margin-right: 133px;
+	margin-top: -471px;
+	margin-bottom: 20px;
+	 
+	
+}
+.mlogo {
+	
+	border-radius:50%;
+	margin-left: 90px;
+}
+
+div.Contact_formC{
+    background-color: azure;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+	padding: 12px 109px;
+	margin: 25px 20px 20px 20px;
+	margin-left: 53%;
+	margin-right: 170px;
+	margin-top: -866px;
+	margin-bottom: 20px;
+    }  
+
+.Contact_formTitle {
+    margin-top: 0px;
+    font-size: 25px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #084949;
+}
+
+
+.Contact_inputBox {
+    align-content: center;
+    height: 40px;
+    width: 300px;
+    border: 1px solid #0074D9;
+    box-shadow: 1px 1px 1px #47eeee;
+    background-color: aliceblue;
+    margin: 10px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+	margin-left: -1px;
+} 
+
+.Contact_bnSubmit {
+    outline: none;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 28px;
+    background-color: #20639B;
+    border: 0px;
+    color: #ffffff;
+}
+
+.Contact_bnSubmit:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #0074D9;
+    color: #20639B;
+    background-color: #ffffff;
+}

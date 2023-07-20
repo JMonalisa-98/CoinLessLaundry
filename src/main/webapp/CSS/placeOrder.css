@@ -1,0 +1,113 @@
+.myBucket {
+    margin-top: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#tableMyBucket {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#imgWashBucketTable {
+    height: 50px;
+    border-radius: 50%;
+}
+
+#inputBoxNum {
+    width: 40px;
+    border: 1px solid #bdbdbd;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+}
+
+#headingMyBucket {
+    margin-left: 50px;
+    font-size: x-large;
+    font-family: 'Roboto';
+    padding-bottom: 0px;
+    color: #0099ff;
+}
+
+#hLine {
+    margin-top: 0;
+    margin-left: 70px;
+    width: 700px;
+    border-top: 1px solid #0099ff;
+    padding-bottom: 30px;
+}
+
+#washImgGirl {
+    max-height: 400px;
+}
+
+.serviceSet {
+    margin: 50px !important;
+}
+
+.serviceContainer {
+	margin: 30px !important;
+    height: 350px;
+    max-width: 250px !important;
+    border-radius: 10px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 2px 1px;
+}
+
+#imgForService {
+    height: 150px;
+}
+
+#formSubmit {
+    height: 40px !important;
+    text-align: center !important;
+    width: 150px !important;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+#btnAddtoCart {
+    height: 40px !important;
+    text-align: center !important;
+    width: 150px !important;
+}
+
+.labelShop {
+    background: rgb(0, 162, 255);
+    color: white;
+    vertical-align: middle;
+    padding-bottom: 0;
+    padding-top: 10px;
+    height: 50px;
+}
+
+.labelPrice {
+    background: #bae3ff;
+    height: 50px;
+    margin-top: 0;
+}
+
+#priceService {
+    color: #0099ff;
+    font-size: large;
+}
+
+.inputBoxNo,
+.cart-quantity-input,
+.cart-price {
+    background: none;
+    border: 0px;
+    outline: none;
+    max-width: 70px;
+    text-align: right;
+}
+
+th,
+td {
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.btn-danger {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}

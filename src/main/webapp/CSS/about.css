@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Nosifer&family=Red+Hat+Display&display=swap');
+#servicesMainImage {
+    max-height: 700px;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+}
+
+#firstTagA {
+    font-family: 'Roboto';
+    font-size: 30px;
+    color: #ffffff;
+}
+
+#description {
+    margin: 20px;
+    font-size: 17px;
+    text-align: justify;
+    color: #ffffff;
+    font-family: 'Roboto';
+}
+
+#boxAbout {
+    margin-top: 20%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    background: #0077ffe1;
+}

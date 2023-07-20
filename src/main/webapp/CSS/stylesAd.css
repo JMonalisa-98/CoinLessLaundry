@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body,html {
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+.sidenav {
+    height: 600px;
+    width: 250px;
+    margin-bottom:50px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(99, 95, 95) , rgb(126, 126, 113));
+    overflow: hidden;
+    padding: 10px;
+    padding-bottom:0
+    
+  }
+
+  .sidenav{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 5fr;
+    overflow: auto;
+  }
+
+  
+  .sidenav a {
+    padding: 20px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #eceaea;
+    display: block;
+    margin-top: 0px;
+  }
+  
+  .sidenav a:hover {
+    color: #423333;
+  }
+
+  .sidenav a:hover:not(.active){
+    color: #dad0d0;
+    background-color: rgb(96, 99, 99);
+  }
+
+  .bar{
+      margin-top:0px;
+      padding: 10px;
+      margin-left: 250px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-sizing: border-box;
+      background-color: #818181;s
+      
+
+     
+  }
+
+  .tbar #bar1{
+
+        width: 300px;
+        height: 50px;
+        
+  }
+
+  .tbar2{
+      margin-left: 700px;
+
+  }
+  
+  .main {
+    margin-left: 260px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px .5%;
+  }
+
+  .notice {
+    background: rgb(236, 236, 236);
+    padding: 30px;
+    box-shadow: 0px 0px 25px rgba(58, 57, 57, 0.05);
+    margin-bottom: 2.2rem;
+
+  }
+
+  .button{
+    background-color: rgb(107, 179, 167);
+    border: 0.1rem solid #35cebe; 
+    border-radius: 32px;
+    font-size: 1.15rem;
+    padding: 15px;
+    cursor: pointer;
+    display: inline-block;
+
+      
+  }
+
+  .button:hover{
+      background-color: #fff
+  }
+
+  .main1{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    
+  }
+
+  .last{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-content:center;
+  }
+  #id1 {
+    padding-left: 250px;
+    
+  }
+
+
+  .van{
+    background: rgb(236, 236, 236);
+    padding: 20px;
+  }
+  
+  .van p{
+    font-family: "montserrat",sans-serif;
+    font-size: 25px;
+    margin: auto;
+    font-weight: 500;
+  
+  }
+  
+  .updateButton {
+  margin:100px;
+  }
+

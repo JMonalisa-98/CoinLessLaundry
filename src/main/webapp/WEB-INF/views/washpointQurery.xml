@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Query>
+	<query id="select_feedback_table">
+        <![CDATA[
+            SELECT * FROM feedback
+        ]]>
+	</query>
+	
+	<query id="select_byId_customer_table">
+        <![CDATA[
+            SELECT * FROM customer WHERE CharID = ?
+        ]]>
+	</query>
+	
+	<query id="select_customer_table">
+        <![CDATA[
+            SELECT * FROM customer
+        ]]>
+	</query>
+	
+	<query id="drop_customer_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS customer
+        ]]>
+	</query>
+	
+	<query id="create_employee_table">
+        <![CDATA[
+           CREATE TABLE `employee` (
+ 			 `CharID` varchar(20) NOT NULL,
+ 			 `firstname` varchar(10) DEFAULT NULL,
+ 			 `lastname` varchar(10) DEFAULT NULL,
+ 			 `NIC` varchar(10) DEFAULT NULL,
+ 			 `Email` varchar(50) DEFAULT NULL,
+ 			 `Gender` varchar(7) DEFAULT NULL,
+  			`profile_pic` varchar(100) DEFAULT 'Images/userProfile/avatar.png',
+  			`password` varchar(20) NOT NULL,
+  			`position` varchar(20) NOT NULL,
+  			`mobile_no` varchar(10) DEFAULT NULL,
+ 			 `RegisteredDate` datetime DEFAULT CURRENT_TIMESTAMP,
+ 			 PRIMARY KEY (`CharID`));
+        ]]>
+	</query>
+	
+	<query id="insert_into_employee_table">
+        <![CDATA[
+           INSERT INTO `employee`
+			(
+			`firstname`,
+			`lastname`,
+			`NIC`,
+			`Email`,
+			`Gender`,
+			`password`,
+			`position`,
+			`mobile_no`)
+			VALUES
+			(?, ?, ?, ?, ?, ?, ?, ?);
+        ]]>
+	</query>
+	
+	
+	<query id="drop_employee_table">
+        <![CDATA[
+           DROP TABLE IF EXISTS `employee`
+        ]]>
+	</query>
+	
+	<query id="update_employee_table">
+        <![CDATA[
+            UPDATE `employee`
+			SET
+			`firstname` = ?,
+			`lastname` = ?,
+			`NIC` = ?,
+			`Email` = ?,
+			`Gender` = ?,
+			`password` = ?,
+			`position` = ?,
+			`mobile_no` = ?
+			WHERE `CharID` = ?; 
+        ]]>
+	</query>
+	
+	<query id="delete_employee_from_employee_table">
+        <![CDATA[
+           DELETE FROM `employee`
+		   WHERE `CharID` = ?;          
+        ]]>
+	</query>
+	
+	<query id="create_employee_audit_table">
+        <![CDATA[
+            CREATE TABLE `employeeregaudit` (
+  			`id` int(11) NOT NULL AUTO_INCREMENT,
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`id`) 
+  			)
+        ]]>
+	</query>
+	
+	<query id="drop_employee_audit_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS `employeeregaudit`
+        ]]>
+	</query>
+	
+	<query id="trigger_insert_to_employeeregaudit">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `employee_BEFORE_INSERT` BEFORE INSERT ON `employee` FOR EACH ROW BEGIN
+			INSERT INTO employeeregaudit(id) VALUES (NULL);
+			IF (NEW.position = 'Manager') THEN
+  			SET NEW.CharID = CONCAT('MG', LPAD(LAST_INSERT_ID(), 3, '0'));
+  			ELSEIF (NEW.position = 'Admin') THEN
+  			SET NEW.CharID = CONCAT('AD', LPAD(LAST_INSERT_ID(), 3, '0'));
+  			ELSE
+  			SET NEW.CharID = CONCAT('EMP', LPAD(LAST_INSERT_ID(), 3, '0'));
+  			END IF;
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_after_insert_employee">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `employee_AFTER_INSERT_1` AFTER INSERT ON `employee` FOR EACH ROW BEGIN
+			INSERT INTO userlogin VALUES(NEW.CharID, NEW.password);
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_update_to_userlogin_employee">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `employee_BEFORE_UPDATE` BEFORE UPDATE ON `employee` FOR EACH ROW BEGIN
+			UPDATE userlogin
+			SET password = NEW.password
+			WHERE userId = NEW.CharID;
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_before_delete_employee">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `employee_BEFORE_DELETE` BEFORE DELETE ON `employee` FOR EACH ROW BEGIN
+			DELETE FROM userlogin
+			WHERE userId = OLD.CharID;
+			END
+        ]]>
+	</query>
+	
+	
+	<query id="select_byId_employee_table">
+        <![CDATA[
+            SELECT * FROM employee WHERE CharID = ?
+        ]]>
+	</query>
+	
+	<query id="select_employee_table">
+        <![CDATA[
+            SELECT * FROM employee
+        ]]>
+	</query>
+	
+	<query id="create_customer_table">
+        <![CDATA[
+           CREATE TABLE `customer` (
+ 			 `CharID` varchar(20) NOT NULL,
+ 			 `C_firstname` varchar(10) DEFAULT NULL,
+ 			 `C_lastname` varchar(10) DEFAULT NULL,
+ 			 `C_NIC` varchar(10) DEFAULT NULL,
+ 			 `C_Email` varchar(50) DEFAULT NULL,
+ 			 `C_Gender` varchar(7) DEFAULT NULL,
+  			`C_address` varchar(50) DEFAULT NULL,
+  			`C_profile_pic` varchar(100) DEFAULT 'Images/userProfile/avatar.png',
+  			`password` varchar(20) NOT NULL,
+  			`C_mobile_no` varchar(10) DEFAULT NULL,
+ 			 `C_RegisteredDate` datetime DEFAULT CURRENT_TIMESTAMP,
+ 			 PRIMARY KEY (`CharID`));
+        ]]>
+	</query>
+	
+	<query id="insert_into_customer_table">
+        <![CDATA[
+           INSERT INTO `customer`
+			(`C_firstname`,`C_lastname`,`C_NIC`,`C_Email`,`C_Gender`,`C_address`,`password`,`C_mobile_no`) 
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+        ]]>
+	</query>
+	
+	<query id="get_newUserId">
+        <![CDATA[
+           SELECT `CharID` FROM `customer` ORDER BY `CharID` DESC LIMIT 1;
+        ]]>
+	</query>
+	
+	<query id="update_customer_table">
+        <![CDATA[
+            UPDATE `customer`
+			SET
+			`C_firstname` = ?,
+			`C_lastname` = ?,
+			`C_NIC` = ?,
+			`C_Email` = ?,
+			`C_address` = ?,
+			`password` = ?,
+			`C_mobile_no` = ?
+			WHERE `CharID` = ?; 
+        ]]>
+	</query>
+	
+	<query id="delete_customr_from_customer_table">
+        <![CDATA[
+           DELETE FROM `customer`
+		   WHERE `CharID` = ?;          
+        ]]>
+	</query>
+		
+	<query id="create_customer_audit_table">
+        <![CDATA[
+            CREATE TABLE `customerregaudit` (
+  			`id` int(11) NOT NULL AUTO_INCREMENT,
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`id`) 
+  			)
+        ]]>
+	</query>
+	
+	<query id="drop_customer_audit_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS `customerregaudit`
+        ]]>
+	</query>
+	
+	<query id="trigger_insert_to_customerregaudit">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `customer_BEFORE_INSERT` BEFORE INSERT ON `customer` FOR EACH ROW BEGIN
+			INSERT INTO customerregaudit(id) VALUES (NULL);
+  			SET NEW.CharID = CONCAT('CUS', LPAD(LAST_INSERT_ID(), 3, '0'));
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_after_insert_customer">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `customer_AFTER_INSERT_1` AFTER INSERT ON `customer` FOR EACH ROW BEGIN
+			INSERT INTO userlogin VALUES(NEW.CharID, NEW.password);
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_update_to_userlogin">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `customer_BEFORE_UPDATE` BEFORE UPDATE ON `customer` FOR EACH ROW BEGIN
+			UPDATE userlogin
+			SET password = NEW.password
+			WHERE userId = NEW.CharID;
+			END
+        ]]>
+	</query>
+	
+	<query id="trigger_before_delete_customer">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `customer_BEFORE_DELETE` BEFORE DELETE ON `customer` FOR EACH ROW BEGIN
+			DELETE FROM userlogin
+			WHERE userId = OLD.CharID;
+			END
+        ]]>
+	</query>
+	
+	<query id="create_table_userlogin">
+        <![CDATA[
+            CREATE TABLE `userlogin` (
+  			`userId` varchar(10) NOT NULL,
+  			`password` varchar(20) NOT NULL,
+ 			 PRIMARY KEY (`userId`)
+			)
+        ]]>
+	</query>
+	
+	<query id="drop_table_userlogin">
+        <![CDATA[
+            DROP TABLE IF EXISTS userlogin
+        ]]>
+	</query>
+	
+	<query id="create_table_feedback">
+        <![CDATA[
+            CREATE TABLE `feedback` (
+  			`f_id` int(11) NOT NULL AUTO_INCREMENT,
+  			`user_id` varchar(45) NOT NULL,
+  			`feedback` varchar(200) NOT NULL,
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`f_id`),
+  			KEY `id` (`user_id`),
+  			CONSTRAINT `userId` FOREIGN KEY (`user_id`) REFERENCES `userlogin` (`userId`));
+        ]]>
+	</query>
+	
+	<query id="drop_table_feedback">
+        <![CDATA[
+            DROP TABLE IF EXISTS feedback
+        ]]>
+	</query>
+	
+	<query id="select_table_feedback">
+        <![CDATA[
+            SELECT * FROM feedback
+        ]]>
+	</query>
+	
+	<query id="insert_into_table_feedback">
+        <![CDATA[
+            INSERT INTO `feedback`(`user_id`,`feedback`)
+			VALUES(?, ?);
+        ]]>
+	</query>
+	
+	<query id="create_table_contact">
+        <![CDATA[
+            CREATE TABLE `contact` (
+  			`c_id` int(11) NOT NULL AUTO_INCREMENT,
+  			`name` varchar(45) NOT NULL,
+  			`email` varchar(50) NOT NULL,
+  			`message` varchar(500) NOT NULL,
+  			`status` varchar(500) DEFAULT 'NOT REPLIED',
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`c_id`));
+        ]]>
+	</query>
+	
+	<query id="drop_table_contact">
+        <![CDATA[
+            DROP TABLE IF EXISTS contact
+        ]]>
+	</query>
+	
+	<query id="select_table_contact">
+        <![CDATA[
+            SELECT * FROM contact
+        ]]>
+	</query>
+	
+	<query id="insert_into_table_contact">
+        <![CDATA[
+            INSERT INTO `contact`(`name`,`email`,`message`)
+			VALUES(?, ?, ?);
+        ]]>
+	</query>
+	
+		<query id="update_contact_table_status">
+        <![CDATA[
+            UPDATE `contact`
+			SET
+			`status` = ?
+			WHERE `c_id` = ?; 
+        ]]>
+	</query>
+	
+	<query id="create_services_table">
+        <![CDATA[
+           CREATE TABLE `services` (
+ 			 `serviceId` varchar(20) NOT NULL,
+ 			 `serviceName` varchar(100) NOT NULL,
+ 			 `description` varchar(100) DEFAULT NULL,
+ 			 `price` float NOT NULL,
+  			`serviceImg` varchar(100) DEFAULT 'Images/washAndFold.png',
+ 			 PRIMARY KEY (`serviceId`));
+        ]]>
+	</query>
+	
+	<query id="drop_services_table">
+        <![CDATA[
+           DROP TABLE IF EXISTS `services`
+        ]]>
+	</query>
+	
+	<query id="insert_into_table_services">
+        <![CDATA[
+            INSERT INTO `services`(`serviceName`,`description`,`price`)
+			VALUES(?, ?, ?);
+        ]]>
+	</query>
+	
+	<query id="seletct_from_table_services">
+        <![CDATA[
+            SELECT * FROM `services`;
+        ]]>
+	</query>
+	
+	<query id="update_service_table">
+        <![CDATA[
+            UPDATE `services`
+			SET
+			`serviceName` = ?,
+			`description` = ?,
+			`price` = ?
+			WHERE `serviceId` = ?; 
+        ]]>
+	</query>
+	
+	<query id="delete_service_from_services_table">
+        <![CDATA[
+           DELETE FROM `services`
+		   WHERE `serviceId` = ?;          
+        ]]>
+	</query>
+		
+	<query id="create_service_audit_table">
+        <![CDATA[
+            CREATE TABLE if not exists `servicesaudit` (
+  			`id` int(11) NOT NULL AUTO_INCREMENT,
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`id`) 
+  			)
+        ]]>
+	</query>
+	
+	<query id="drop_service_audit_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS `servicesaudit`
+        ]]>
+	</query>
+	
+	<query id="trigger_insert_to_servicesaudit">
+        <![CDATA[
+            CREATE DEFINER=`root`@`localhost` TRIGGER `service_BEFORE_INSERT` BEFORE INSERT ON `services` FOR EACH ROW BEGIN
+			INSERT INTO servicesaudit(id) VALUES (NULL);
+  			SET NEW.serviceId = CONCAT('SEV', LPAD(LAST_INSERT_ID(), 3, '0'));
+			END
+        ]]>
+	</query>
+	
+	<query id="select_byId_services_table">
+        <![CDATA[
+            SELECT * FROM `services` WHERE `serviceId` = ?;
+        ]]>
+	</query>
+	
+	<query id="select_serviceId_services_table">
+        <![CDATA[
+            SELECT `serviceId` FROM `services`;
+        ]]>
+	</query>
+	
+	<query id="create_table_orders">
+        <![CDATA[
+            CREATE TABLE `orders` (
+  			`orderId` varchar(20) NOT NULL,
+  			`customerId` varchar(20) NOT NULL,
+  			`description` varchar(500) NOT NULL,
+  			`total` double NOT NULL,
+  			`status` varchar(50) DEFAULT 'PROCESSING',
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`orderId`));
+        ]]>
+	</query>
+	
+	<query id="insert_into_table_orders">
+        <![CDATA[
+            INSERT INTO `orders`
+			(`customerId`,
+			`description`,
+			`total`)
+			VALUES(?, ?, ?);
+        ]]>
+	</query>
+	
+	
+	<query id="drop_orders_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS `orders`
+        ]]>
+	</query>
+	
+	<query id="select_orders_table">
+        <![CDATA[
+            SELECT * FROM `orders` ORDER BY `date` DESC
+        ]]>
+	</query>
+	
+	<query id="change_status_order_table">
+        <![CDATA[
+            UPDATE `orders`
+			SET
+			`status` = ?
+			WHERE `orderId` = ?; 
+        ]]>
+	</query>
+	
+	<query id="get_order_by_id">
+        <![CDATA[
+            SELECT * FROM `orders` WHERE `orderId` = ?; 
+        ]]>
+	</query>
+	
+	<query id="view_total_order">
+        <![CDATA[
+            SELECT COUNT(*) FROM `orders`
+        ]]>
+	</query>
+	
+	<query id="view_total_order_today">
+        <![CDATA[
+            SELECT COUNT(*) FROM `orders` where DATE(date) = curdate()
+        ]]>
+	</query>
+	
+	<query id="toal_income_today">
+        <![CDATA[
+            SELECT SUM(total) FROM `orders` where DATE(date) = curdate()
+        ]]>
+	</query>
+	
+	<query id="view_toal_income">
+        <![CDATA[
+            SELECT SUM(total) FROM `orders`
+        ]]>
+	</query>
+	
+	<query id="view_new_customers_today">
+        <![CDATA[
+            SELECT count(*) FROM `customer` where DATE(C_RegisteredDate) = curdate()
+        ]]>
+	</query>
+	
+	<query id="view_total_customers">
+        <![CDATA[
+            SELECT count(*) FROM `customer`
+        ]]>
+	</query>
+	
+	<query id="create_orders_audit_table">
+        <![CDATA[
+            CREATE TABLE `orders_audit` (
+  			`id` int(11) NOT NULL AUTO_INCREMENT,
+  			`date` datetime DEFAULT CURRENT_TIMESTAMP,
+  			PRIMARY KEY (`id`) 
+  			)
+        ]]>
+	</query>
+	
+	<query id="drop_orders_audit_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS `orders_audit`
+        ]]>
+	</query>
+	
+	<query id="count_unreplied_messages">
+        <![CDATA[
+            SELECT count(*) FROM contact WHERE status="Not Replied";
+        ]]>
+	</query>
+	
+	<query id="trigger_insert_to_order_gaudit">
+        <![CDATA[
+           CREATE DEFINER=`root`@`localhost` TRIGGER `orders_BEFORE_INSERT` BEFORE INSERT ON `orders` FOR EACH ROW BEGIN
+		   INSERT INTO orders_audit(id) VALUES (NULL);
+		   SET NEW.orderId = CONCAT('WEB/ORD', LPAD(LAST_INSERT_ID(), 4, '0'));
+		   END
+        ]]>
+	</query>
+	
+	<query id="user_login_validate">
+        <![CDATA[
+          SELECT password FROM userlogin WHERE userId = ?
+        ]]>
+	</query>
+	
+	
+)
+</Query>
+

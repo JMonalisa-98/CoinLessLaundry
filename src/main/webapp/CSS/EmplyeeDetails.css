@@ -1,0 +1,66 @@
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: rgb(151, 24, 24);
+    font-weight: 100;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    margin-top: 0px;
+  }
+ div .form{
+   margin-top: 5em;
+   margin-left: 85%;
+   padding: 20px;
+   background-color: rgb(218, 49, 49);
+ }
+
+
+ table, td, th {
+  border: 1px solid black;
+}
+table th{
+  background-color: #160b53;
+  color: #fff;
+  border-color: beige;
+}
+
+table {
+  width:100%;
+  position:fixed;
+  top:200px;
+}
+
+tr {
+	width:auto;
+}
+
+th {
+  text-align: left;
+}
+ input[type="text"]{
+  font-size: 0.9em;
+  color: rgb(218, 49, 49);
+  font-weight: 100;
+  width: 50.5%;
+  display: block;
+  border: none;
+  padding: 0.7em;
+  border: solid 1px rgba(255, 255, 255, 0.37);
+
+  font-family: 'Roboto', sans-serif;
+}
+input[type="submit"] {
+  font-size: .9em;
+  color: #fff;
+  background: #160b53;
+  outline: none;
+  border: 1px solid #160b53;
+  cursor: pointer;
+  padding: 0.7em;
+  -webkit-appearance: none;
+  width: 50%;
+  margin: 2em 0;
+  letter-spacing: 4px;
+}
+

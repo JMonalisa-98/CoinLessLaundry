@@ -1,0 +1,793 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display|Roboto&display=swap');
+body,
+header,
+body {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+/*Edit User Student*/
+
+.EditUserStu {
+    display: grid;
+    margin-top: 50px;
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-bottom: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgba(233, 233, 233, 0.25);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.EditUserStu_titleForm {
+    grid-column: span 3;
+}
+
+.editUserStu_button {
+    outline: none;
+    margin: 20px;
+    padding: 10px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 28px;
+    background-color: #00b167;
+    border: 0px;
+    color: #ffffff;
+}
+
+.editUserStu_button:hover {
+    scale: 1.5;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #00b167;
+    color: #00b167;
+    background-color: #ffffff;
+}
+
+#EditUserStu_title {
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #00b167;
+}
+
+.EditUserStu_fieldSet {
+    margin-left: 30px;
+    border-radius: 12px;
+    width: 200px;
+    padding-right: 0px;
+    height: 30px;
+    border-color: none;
+}
+
+.EditUserStu_fieldSet:hover {
+    margin-left: 30px;
+    border-radius: 12px;
+    width: 200px;
+    height: 30px;
+    border: solid 2px;
+    border-color: #00b167;
+    transition: 0.5s;
+}
+
+.EditUserStu_delete {
+    height: 11px;
+    width: auto;
+    align-content: right;
+    margin: 0px;
+    vertical-align: center;
+    display: none;
+}
+
+.EditUserStu_delete:hover {
+    cursor: pointer;
+    height: 11px;
+    width: auto;
+    align-content: right;
+    margin: 0px;
+    vertical-align: center;
+}
+
+.EditUserStu_input {
+    outline: none;
+    border: 0px;
+    background: none;
+    padding-left: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: rgb(165, 165, 165);
+}
+
+.legend_title {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #474747;
+}
+
+
+/*Contact Page Body CSS*/
+
+#contactTable {
+    border: 2px solid black;
+    display: table;
+}
+
+.Contact_contact {
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 350px;
+    grid-gap: 20px;
+}
+
+.Contact_formC,
+.Contact_details,
+.Contact_formRate {
+    background-color: azure;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+}
+
+.Contact_contactTable {
+    margin: 40px;
+    padding: 20px;
+}
+
+.Contact_rowContact {
+    margin: 10px;
+    align-content: center;
+    padding: 10px;
+}
+
+.Contact_textC {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #474747;
+}
+
+.Contact_formC,
+.Contact_formRate {
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 0px;
+}
+
+.Contact_inputBox {
+    align-content: center;
+    border-radius: 28px;
+    height: 40px;
+    width: 300px;
+    border: 1px solid #0074D9;
+    box-shadow: 1px 1px 1px #47eeee;
+    background-color: aliceblue;
+    margin: 10px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+.Contact_formC #textArea_Message {
+    resize: vertical;
+    max-block-size: 135px;
+    min-block-size: 120px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 15px;
+}
+
+.Contact_formRate #textArea_Feedback {
+    resize: vertical;
+    block-size: 100px;
+    max-block-size: 100px;
+    padding: 15px;
+}
+
+::placeholder {
+    color: #7c7c7c;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+}
+
+.Contact_formTitle {
+    margin-top: 0px;
+    font-size: 25px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #084949;
+}
+
+.Contact_wrongInput {
+    outline: none;
+    align-content: center;
+    border-radius: 28px;
+    height: 40px;
+    width: 300px;
+    border: 1.5px solid #ff0000;
+    background-color: aliceblue;
+    margin: 10px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+    animation: shake 0.1s;
+    animation-iteration-count: 5;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+}
+
+.error {
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ff0000;
+    padding: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.Contact_bnSubmit {
+    outline: none;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 28px;
+    background-color: #20639B;
+    border: 0px;
+    color: #ffffff;
+}
+
+.Contact_bnSubmit:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #0074D9;
+    color: #20639B;
+    background-color: #ffffff;
+}
+
+.Contact_details {
+    max-height: 900px;
+    grid-row: span 2;
+}
+
+.Contact_formC {
+    max-height: 500px;
+}
+
+.Contact_formRate {
+    max-height: 350px;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    display: grid;
+    row-gap: 1em;
+    text-align: left;
+    grid-template-columns: repeat(3, 0.5fr 2.5fr 1fr) repeat(4, 0.5fr);
+}
+
+.allrights {
+    grid-column: span 16;
+}
+
+.iconF {
+    height: 20px;
+    width: auto;
+}
+
+.linkF {
+    margin-top: 0px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 17px;
+    color: #005fee;
+}
+
+#copyright {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    color: #005fee;
+}
+
+
+/*User Profile | Lecturer*/
+
+#UserStu_Notice {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #474747;
+    margin-left: 50px;
+}
+
+.UserLec_DetailsBackground {
+    display: grid;
+    margin-top: 50px;
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-bottom: 50px;
+    grid-template-rows: 300px 500px;
+    grid-template-columns: 1.2fr 2fr;
+    grid-gap: 20px;
+    background: rgba(233, 233, 233, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.UserLec_Details {
+    grid-row: span 2;
+    max-height: auto;
+    display: grid;
+    grid-template-rows: 2fr 4fr 0.5fr;
+    grid-gap: 10px;
+}
+
+.UserLec_Notice {
+    max-height: 300px;
+}
+
+.UserLec_Timetable {
+    max-height: 5000px;
+}
+
+.UserLec_Timetable,
+.UserLec_Notice,
+.UserLec_Details {
+    background-color: azure;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+}
+
+.UserLec_UserImage #user {
+    border-radius: 50%;
+    height: 250px;
+    width: auto;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 30px;
+    border: 3px solid #06575B;
+}
+
+.UserLec_UserImage {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.Notice_wrongInput {
+    align-content: center;
+    border-radius: 28px;
+    height: 30px;
+    width: 300px;
+    border: 1px solid #ff0000;
+    box-shadow: 1px 1px 1px rgb(255, 47, 47);
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-left: 30px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    animation: shake 0.1s;
+    animation-iteration-count: 5;
+    padding-left: 10px;
+}
+
+.UserL_userDescription {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #6e6e6e;
+    font-size: 18px;
+}
+
+.UserLec_UserDetails {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 5px;
+    margin-left: 75px;
+    padding: 0px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #06575B;
+    font-size: 20px;
+}
+
+.UserLec_EditButton {
+    margin-left: 75px;
+}
+
+.icon {
+    height: 30px;
+    width: auto;
+}
+
+#UserLec_editButton {
+    outline: none;
+    padding: 5px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 28px;
+    background-color: #06575B;
+    border: 0px;
+    color: #ffffff;
+}
+
+#UserLec_editButton:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #06575B;
+    color: #06575B;
+    background-color: #ffffff;
+}
+
+#UserLec_NocticeTitle {
+    margin-top: 20px;
+    font-size: 25px;
+    margin-bottom: 0px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #06575B;
+    margin-left: 30px;
+}
+
+.UserLec_InputBox {
+    align-content: center;
+    border-radius: 28px;
+    height: 30px;
+    width: 300px;
+    border: 1px solid #06575B;
+    box-shadow: 1px 1px 1px rgb(78, 178, 255);
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-left: 30px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+.UserLec_NoticeD {
+    resize: vertical;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    margin-top: 20px;
+    border-radius: 28px;
+    width: 300px;
+    border: 1px solid #06575B;
+    box-shadow: 1px 1px 1px rgb(78, 178, 255);
+    background-color: aliceblue;
+    margin-left: 30px;
+    outline: none;
+    color: #474747;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+.UserLec_NoticeForm {
+    display: grid;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-gap: 0px;
+}
+
+.UserLec_Radio {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    color: #06575B;
+    padding-left: 40px;
+    display: block;
+    line-height: 4px;
+    margin-top: 5px;
+}
+
+#UserLec_postBtn:disabled {
+    margin-left: 40px;
+    margin-top: 30px;
+    padding: 5px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: 40px;
+    border-radius: 28px;
+    background-color: rgb(56, 56, 56);
+    border: 0px;
+    color: #ffffff;
+}
+
+#UserLec_postBtn {
+    margin-left: 40px;
+    margin-top: 30px;
+    padding: 5px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: 40px;
+    border-radius: 28px;
+    background-color: #06575B;
+    border: 0px;
+    color: #ffffff;
+}
+
+#UseLec_checkBox {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    margin-left: 40px;
+    color: #06575B;
+    margin-bottom: 0px;
+}
+
+#UserLec_postBtn:enabled:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #06575B;
+    color: #06575B;
+    background-color: #ffffff;
+}
+
+.UserLec_bnDownload {
+    outline: none;
+    margin-left: 60px;
+    margin-top: 15px;
+    padding: 10px;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 28px;
+    background-color: #06575B;
+    border: 0px;
+    color: #ffffff;
+}
+
+.UserLec_bnDownload:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #06575B;
+    color: #06575B;
+    background-color: #ffffff;
+}
+
+#UseLec_timetable {
+    width: 500px;
+    height: auto;
+    margin-left: 60px;
+}
+
+
+/*UserLecturer Edit Unsuccess*/
+
+#EditLec_sucessMsgPara {
+    font-size: 20px;
+    margin-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    color: #20639B;
+}
+
+
+/*contactSucess*/
+
+.contactSuccessMsg {
+    display: grid;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    grid-template-columns: 1fr 0.5fr 2fr;
+    grid-gap: 20px;
+    background: rgba(187, 255, 252, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+}
+
+#msgSuccessImg {
+    height: 250px;
+    margin-left: 50px;
+    width: auto;
+    opacity: 1;
+}
+
+#msgSuccessImg:hover {
+    scale: 1.05;
+    transition: 0.5s;
+    opacity: 0.75;
+}
+
+#sucessMsgPara {
+    font-size: 20px;
+    margin-top: 70px;
+    font-family: 'Roboto', sans-serif;
+    color: #20639B;
+}
+
+#verify {
+    height: 80px;
+    margin: 50px;
+    margin-right: 0;
+    width: auto;
+}
+
+.bnBack {
+    margin: 20px;
+    padding: 15px;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    border-radius: 0px;
+    background-color: #06575B;
+    border: 0px;
+    color: #ffffff;
+}
+
+.bnBack:hover {
+    cursor: pointer;
+    border: 2px solid #06575B;
+    color: #06575B;
+    background-color: #ffffff;
+}
+
+#Contact_FAQ_img {
+    height: 150px;
+    margin: 30px
+}
+
+.Contact_FAQ {
+    display: grid;
+    max-height: auto;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    grid-gap: 20px;
+    grid-template-columns: 3fr 1fr;
+    background: rgba(187, 255, 252, 0.3);
+    border-radius: 20px;
+    padding-top: 0px;
+    padding-left: 40px;
+    padding-bottom: 0px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+}
+
+.Contact_faqTitle {
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-family: 'Red Hat Display', sans-serif;
+    color: #20639B;
+}
+
+.Contact_faq {
+    margin-top: 0px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+}
+
+#Contact_readMore {
+    display: none;
+}
+
+#Contact_bnFAQ {
+    outline: none;
+    margin: 15px;
+    padding: 5px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    height: auto;
+    border-radius: 40px;
+    background-color: #20639B;
+    border: 0px;
+    color: #ffffff;
+}
+
+#Contact_bnFAQ:hover {
+    cursor: pointer;
+    margin: 15px;
+    padding: 5px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    height: auto;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px #0074D9;
+    color: #20639B;
+}
+
+.Contact_many {
+    display: grid;
+    max-height: auto;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    grid-gap: 20px;
+    background: rgba(187, 255, 252, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 5px 10px rgba(201, 201, 201, 0.548);
+}
+
+#img_centers {
+    height: 250px;
+    width: auto;
+}
+
+#Contact_details_centres_des {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+    color: #20639B;
+}
+
+.Contact_many_bn {
+    outline: none;
+    border: none;
+    border-bottom: solid 3px #20639B;
+    margin: 0px;
+    padding: 15px;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    vertical-align: center;
+    background: none;
+    color: #20639B;
+}
+
+.Contact_many_bn:hover {
+    border: none;
+    border-bottom: solid 3px rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 0px;
+    padding: 15px;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: auto;
+    vertical-align: center;
+    color: rgb(0, 0, 0);
+}

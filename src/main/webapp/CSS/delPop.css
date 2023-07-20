@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Nosifer&family=Red+Hat+Display&display=swap');
+.first {
+    background-color: red;
+    height: 300px;
+    width: 100% !important;
+    margin-top: 1000px;
+    margin-left: 0;
+}
+
+#mainImage {
+    max-height: 700px;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+}
+
+#firstTag {
+    font-family: 'Roboto';
+    margin-top: 50%;
+}
+
+#placeOrder {
+    position: absolute;
+}
+
+.homePgBtn {
+    background: none;
+    border: 2px solid #002344;
+    color: #002344;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.homePgBtn:hover {
+    background-color: #0084ff;
+    border-color: #0084ff;
+    color: white;
+    font-weight: normal;
+}
+
+#washingHome {
+    margin-top: 20px;
+}
+
+#howItWork {
+    align-items: center;
+    margin-top: 250px;
+    font-size: 30px;
+    color: #0084ff;
+}
+
+.rowHowIt {
+    margin: 10px !important;
+}
+
+.boxHowItWork {
+    margin-top: 25px;
+    background: #f1f1f198;
+    border: 2px solid #0084ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 250px !important;
+}
+
+.imageHowItWorks {
+    height: 120px;
+    min-height: 100px;
+    width: auto;
+    margin-left: 10px;
+    align-content: center;
+}
+
+.topicsHowIt {
+    color: #003363;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.contentHowIt {
+    font-size: 17px;
+    text-align: center;
+    color: #002344;
+}
+
+#pickUpImg {
+    transform: rotateY(180deg);
+}
+
+.getServiceAd {
+    margin-top: 40px;
+    background-image: url("../Images/serviceAd.jpg");
+    height: 500px;
+    background-color: rgb(243, 243, 243);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    margin-bottom: 50px;
+}
+
+#headingSeeServices {
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 50px;
+    font-size: 50px;
+    font-size-adjust: initial;
+    color: #0084ff;
+}
+
+#textServiceAd {
+    margin-top: 20px;
+    text-align: justify;
+    font-size: 20px;
+    color: #002344;
+    margin-left: 50px;
+}
+
+#rowSpaceService {
+    margin-top: 50px;
+}
+
+#findServices,
+#placeOrder {
+    width: 150px !important;
+    margin-top: 10px;
+}
+
+@media(max-width:800px) {
+    #headingSeeServices {
+        font-size: 40px;
+    }
+    #findServices,
+    #placeOrder {
+        border-color: #ffffff !important;
+        color: #ffffff !important;
+    }
+    .getServiceAd {
+        height: 350px;
+    }
+}
+
+#imgSerGirl {
+    margin-bottom: 50px;
+}
+
+.freeDelivery {
+    margin-top: 25px;
+    background: #ffffff;
+    border: 3px solid #0084ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 50px;
+    max-width: 250px !important;
+    margin-left: 100px !important;
+}
+
+.delFree {
+    background-color: red;
+    height: 50px;
+}
+
+.imageHowItWorks {
+    height: 120px;
+    min-height: 100px;
+    width: auto;
+    margin-left: 10px;
+    align-content: center;
+}
+
+.topicDel {
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 10px;
+    vertical-align: middle;
+}

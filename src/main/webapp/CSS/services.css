@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Nosifer&family=Red+Hat+Display&display=swap');
+#servicesMainImage {
+    max-height: 700px;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+}
+
+#firstTag {
+    font-family: 'Roboto';
+    margin-top: 30%;
+    margin-left: 10%;
+}
+
+#howItWork {
+    align-items: center;
+    margin-top: 250px;
+    font-size: 30px;
+    color: #0084ff;
+}
+
+.rowHowIt {
+    margin: 10px !important;
+}
+
+.boxHowItWork {
+    margin-top: 25px;
+    background: #ffffff;
+    border: 2px solid #0084ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    height: 350px !important;
+    max-width: 250px !important;
+}
+
+.imageHowItWorks {
+    height: 120px;
+    min-height: 100px;
+    width: auto;
+    margin-left: 10px;
+    align-content: center;
+}
+
+.topicsHowIt {
+    color: #003363;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.contentHowIt {
+    font-size: 17px;
+    text-align: center;
+    color: #002344;
+}
+
+#washingImgService {
+    height: 300px;
+    margin: 25px;
+    width: auto;
+}

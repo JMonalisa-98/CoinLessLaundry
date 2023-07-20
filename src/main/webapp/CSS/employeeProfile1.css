@@ -1,0 +1,127 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #fffdfd;
+	font-family: arial;
+	box-sizing: border-box;
+}
+.card-container{
+	width: 1000px;
+	background: #FFF;
+	border-radius: 6px;
+	position: relative;
+	margin-top:30px;
+	margin-left:150px;
+	margin-bottom:50px;
+	box-shadow: 0px 1px 10px 1px #000;
+	display: inline-block;
+}
+.h1{
+	font-style: oblique;
+	color: cornsilk;
+	margin-left: 400px;
+}
+.upper-container{
+	height: 300px;
+	background: #7F00FF;
+}
+.image-container{
+	background: rgb(236, 229, 229);
+	width: 200px;
+	height: 150px;
+	border-radius: 50%;
+	padding: 5px;
+	transform: translate(100px,100px);
+}
+.image-container img{
+	width: 200px;
+	height: 150px;
+	border-radius: 50%;
+}
+.lower-container{
+	height: 280px;
+	background: #FFF;
+	padding: 20px;
+	padding-top: 40px;
+	text-align: center;
+	
+}
+.lower-container h3, h4{
+	box-sizing: border-box;
+	line-height: .6;
+	font-weight: lighter;
+}
+.lower-container h4{
+	color: #7F00FF;
+	opacity: .6;
+	font-weight: bold;
+}
+.lower-container p{
+	font-size: 16px;
+	color: gray;
+	margin-bottom: 30px;
+	margin-right: 30px;
+}
+
+.open-button {
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	border-radius:10px;
+	bottom: 100px;
+	right: 50px;
+	width: 280px;
+  }
+  
+  /* The popup form - hidden by default */
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+ 
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  
+  div .de h2{
+	  text-align: left;
+	  color: darkblue;
+	 
+	  background-color: rgb(238, 236, 230);
+	  
+  }
+  
+  #mgSer {
+  margin-bottom:120px;
+  background:rgb(0, 132, 255);
+  }
+  div .de{
+	  margin-left: 30px;
+	  margin-top: 20px;
+  }
+  
+  /* Add a red background color to the cancel button */
+ 
+  /* Add some hover effects to buttons */
+
+/*    <form  action = "#" method = "POST">
+            <input type ="text"  name = "mobile" placeholder="mobile">
+            <input type = "text" name = "address" placeholder="address">
+            <input class = "update" type = "submit" value ="Update profile" >
+        </form>
+        <form  action = "#" method = "POST">
+            <input class = "update" type = "submit" value ="Edit profile pic" >
+        </form> */
